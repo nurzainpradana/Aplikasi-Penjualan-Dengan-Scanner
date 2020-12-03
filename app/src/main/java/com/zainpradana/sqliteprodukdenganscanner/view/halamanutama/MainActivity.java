@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.zainpradana.sqliteprodukdenganscanner.R;
+import com.zainpradana.sqliteprodukdenganscanner.view.produk.DataProduk;
 import com.zainpradana.sqliteprodukdenganscanner.view.scanbarcode.ScanBarcode;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void keScanBarcode(View view) {
         Intent i = new Intent(MainActivity.this, ScanBarcode.class);
+        startActivity(i);
+    }
+
+    public void keDaftarProduk(View view) {
+        Intent i = new Intent(MainActivity.this, DataProduk.class);
         startActivity(i);
     }
 }

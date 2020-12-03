@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteProdukDenganScanner">
-        <activity android:name=".view.scanbarcode.ScanBarcode"></activity>
+        <activity android:name=".view.produk.TambahProduk"></activity>
+        <activity android:name=".view.produk.DataProduk" />
+        <activity android:name=".view.scanbarcode.ScanBarcode" />
         <activity android:name=".view.halamanutama.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
