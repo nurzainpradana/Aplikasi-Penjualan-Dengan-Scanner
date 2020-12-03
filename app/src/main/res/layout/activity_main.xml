@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/cream"
+    tools:context=".HalamanUtama.MainActivity">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_warung"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:text="Selamat Datang"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hasil Scan : "/>
+    <EditText
+        android:id="@+id/et_hasil_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_pindai_barcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Pindai Barcode"/>
+
+    <Button
+        android:id="@+id/btn_pindai_qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pindai QR Code"/>
+
+    <Button
+        android:id="@+id/btn_cari_produk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cari Produk"/>
+
+    <Button
+        android:id="@+id/btn_daftar_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Daftar Produk"/>
+</LinearLayout>
