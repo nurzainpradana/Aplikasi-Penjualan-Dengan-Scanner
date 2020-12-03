@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@color/cream"
-    tools:context=".HalamanUtama.MainActivity">
+    tools:context=".view.halamanutama.MainActivity">
 
     <ImageView
         android:layout_width="150dp"
@@ -37,13 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:onClick="keScanBarcode"
         android:text="Pindai Barcode"/>
-
-    <Button
-        android:id="@+id/btn_pindai_qrcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pindai QR Code"/>
 
     <Button
         android:id="@+id/btn_cari_produk"

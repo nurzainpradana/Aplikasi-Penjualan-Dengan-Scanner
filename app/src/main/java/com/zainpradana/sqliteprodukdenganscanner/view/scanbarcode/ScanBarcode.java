@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.zxing.Result;
-import com.zainpradana.sqliteprodukdenganscanner.HalamanUtama.MainActivity;
+import com.zainpradana.sqliteprodukdenganscanner.view.halamanutama.MainActivity;
 import com.zainpradana.sqliteprodukdenganscanner.R;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -32,6 +32,20 @@ public class ScanBarcode extends AppCompatActivity implements ZXingScannerView.R
         checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        zXingScannerView.setResultHandler(this);
+        zXingScannerView.startCamera();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        zXingScannerView.setResultHandler(this);
+        zXingScannerView.stopCamera();
+    }
+
     private void checkPermission(String camera, int cameraPermissionCode) {
         if (ContextCompat.checkSelfPermission(ScanBarcode.this, camera) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(ScanBarcode.this, new String[] {camera}, cameraPermissionCode);
@@ -45,8 +59,10 @@ public class ScanBarcode extends AppCompatActivity implements ZXingScannerView.R
     public void handleResult(Result result) {
         hasilPemindaian = result.getText();
 
-        if (hasilPemindaian == null){
+        if (hasilPemindaian != null){
+            Toast.makeText(this, "Berhasil Memindai", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(ScanBarcode.this, MainActivity.class);
+            i.putExtra("hasil_key", hasilPemindaian);
             startActivity(i);
             finish();
         } else {
